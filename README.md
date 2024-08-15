@@ -1,4 +1,4 @@
-# Apache Server Scrip
+# Apache Server Script
 
 ## Descrição
 
@@ -48,6 +48,29 @@ Este repositório tem um script de User Data para configuração automática do 
 
     systemctl restart httpd reinicia o Apache para aplicar quaisquer alterações.
 
+    ## Como funciona o scrip.sh
+
+    - Instalação do Apache:
+
+      yum install -y httpd: Instala o servidor Apache.
+
+    - Início e Configuração do Apache:
+
+      systemctl start httpd: Inicia o serviço do Apache.
+      systemctl enable httpd: Configura o Apache para iniciar automaticamente com o           sistema.
+      
+    - Criação de um Arquivo HTML Vazio:
+
+      touch /var/www/html/index.html: Cria um arquivo index.html vazio no diretório           padrão do Apache.
+ 
+      Se o arquivo /var/www/html/index.html não existir, o comando touch cria um novo         arquivo vazio com esse nome. Isso significa que nenhum conteúdo é adicionado ao         arquivo neste momento, apenas a estrutura de arquivo é criada.
+      
+    - Permissões:
+
+      chown apache:apache /var/www/html/index.html: Ajusta as permissões do arquivo           index.html para que o usuário apache possa acessá-lo e modificá-lo.
+    
+
+    
   
   
   
