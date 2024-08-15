@@ -15,6 +15,7 @@ Este repositório tem um script de User Data para configuração automática do 
   ### Como Fazer
 
   Criar uma nova instancia.
+  
   ![image](https://github.com/user-attachments/assets/e42cea15-3a8a-4796-bb48-7c5e30ff0e1d)
 
   Siga para detalhes Avançados, ao final você vai encontrar o campo: User Data
