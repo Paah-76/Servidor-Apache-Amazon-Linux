@@ -22,7 +22,32 @@ Este repositório tem um script de User Data para configuração automática do 
   ![image](https://github.com/user-attachments/assets/151c97f7-ed75-4877-991b-a78e436244c7)
 
   Nesse campo, você pode escrever seu scrip ou adicionar um arquivo.
-  
+
+  ## Como funciona o scrip_html.sh
+
+  - Instalação do Apache:
+    yum install -y httpd instala o servidor Apache.
+
+  - Início e Configuração do Apache:
+    systemctl start httpd inicia o servidor Apache.
+    systemctl enable httpd configura o Apache para iniciar automaticamente quando a         instância for reiniciada.
+    
+  - Criação da Página HTML:
+
+    cat <<EOF > /var/www/html/index.html cria um arquivo HTML simples no diretório          padrão do Apache (/var/www/html). O conteúdo da página inclui uma saudação e uma        breve descrição.
+
+    Entre <<EOF e EOF (ou qualquer outro marcador que você escolher), você insere o         conteúdo que deseja escrever no arquivo. Este bloco de texto é enviado diretamente      para o arquivo de destino especificado pelo redirecionamento >.
+
+    Em resumo, o EOF é um marcador que indica onde o bloco de texto começa e termina        quando você usa o redirecionamento de texto em scripts de shell. É uma maneira          prática de incluir grandes blocos de texto em um arquivo sem ter que usar múltiplos     comandos echo ou outros métodos de escrita.
+    
+    - Permissões:
+
+    chown -R apache:apache /var/www/html garante que o Apache tenha as permissões           corretas para acessar o diretório onde a página HTML está armazenada.
+    
+    - Reinício do Apache:
+
+    systemctl restart httpd reinicia o Apache para aplicar quaisquer alterações.
+
   
   
   
